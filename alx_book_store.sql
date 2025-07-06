@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS alx_book_store /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS alx_book_store /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE alx_book_store;
 -- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
 --
@@ -18,13 +18,13 @@ USE alx_book_store;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table authors
+-- Table structure for table Authors
 --
 
-DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS Authors;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE authors (
+CREATE TABLE Authors (
   author_id int NOT NULL,
   author_name varchar(215) DEFAULT NULL,
   PRIMARY KEY (author_id)
@@ -32,12 +32,12 @@ CREATE TABLE authors (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table authors
+-- Dumping data for table Authors
 --
 
-LOCK TABLES authors WRITE;
-/*!40000 ALTER TABLE authors DISABLE KEYS */;
-/*!40000 ALTER TABLE authors ENABLE KEYS */;
+LOCK TABLES Authors WRITE;
+/*!40000 ALTER TABLE Authors DISABLE KEYS */;
+/*!40000 ALTER TABLE Authors ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -55,7 +55,7 @@ CREATE TABLE books (
   publication_date date DEFAULT NULL,
   PRIMARY KEY (book_id),
   KEY author_id (author_id),
-  CONSTRAINT books_ibfk_1 FOREIGN KEY (author_id) REFERENCES authors (author_id)
+  CONSTRAINT books_ibfk_1 FOREIGN KEY (author_id) REFERENCES Authors (author_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
